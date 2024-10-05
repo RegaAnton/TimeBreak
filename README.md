@@ -2,7 +2,7 @@
 
 <h1 align="center">
    <a href="https://github.com/RegaAnton/TimeBreak.git" target="_blank" align="center">
-      My Portofolio
+      TimeBreak Website
    </a>
 </h1>
 
