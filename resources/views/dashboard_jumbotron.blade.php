@@ -109,7 +109,7 @@
                                 <td>{{ $item->title }}</td>
                                 <td><a href="{{ $item->image_url }}">View</a></td>
                                 <td>
-                                    <form action="{{ route('delete.jumbotron', $item->slug) }}" method="POST">
+                                    <form action="{{ route('delete.jumbotron', $item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')                                      
                                         <button type="submit" class="btn btn-danger">DELETE</button>

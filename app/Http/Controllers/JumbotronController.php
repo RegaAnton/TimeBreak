@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\Support\Facades\Storage;
 
 class JumbotronController extends Controller
 {
@@ -38,8 +38,6 @@ class JumbotronController extends Controller
             'image_url' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
-        $slug = Str::slug($request->title);
-
         $image = $request->file('image_url');
         $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
         $path = 'images/jumbotron/';
@@ -48,7 +46,6 @@ class JumbotronController extends Controller
         // Simpan data ke database
         $data = new Jumbotron();
         $data->title = $request->title;
-        $data->slug = $slug;
         $data->image_url = $path . $imageName;
 
         $data->save();
@@ -69,15 +66,39 @@ class JumbotronController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Jumbotron::findOrFail($id);
+        return view('form', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
-        
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'image_url' => 'required|image|mimes:jpeg,png,jpg,gif',
+        ]);
+
+        $data = Jumbotron::findOrFail($id);
+
+        // Hapus Image di Lokal
+        if (file_exists(public_path($data->image_url))) {
+            unlink(public_path($data->image_url)); // Hapus file gambar lama
+        }
+
+        $image = $request->file('image_url');
+        $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+        $path = 'images/jumbotron/';
+        $image->move($path, $imageName);
+
+        // Perbarui data ke database
+        $data->title = $request->title;
+        $data->image_url = $path . $imageName;
+
+        $data->save();
+
+        return redirect()->route('index');
     }
 
 
@@ -85,10 +106,10 @@ class JumbotronController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $slug)
+    public function destroy(string $id)
     {
         // Mencari Data
-        $findData = Jumbotron::where('slug', $slug)->firstOrFail();
+        $findData = Jumbotron::where('id', $id)->firstOrFail();
 
         // Hapus Image di Lokal
         if (file_exists(public_path($findData->image_url))) {

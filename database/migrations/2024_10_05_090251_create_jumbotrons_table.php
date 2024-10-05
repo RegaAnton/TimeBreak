@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('jumbotrons', function (Blueprint $table) {
             $table->id(); // Id Gambar
             $table->string('title')->nullable(); // Judul gambar
-            $table->string('slug')->unique(); // Slug
             $table->string('image_url'); // URL atau path gambar
             $table->timestamps(); // Waktu Upload Gambar
         });

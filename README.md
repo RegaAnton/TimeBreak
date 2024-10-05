@@ -58,7 +58,7 @@ DB_PASSWORD=
 -   Create Database
 
 ```bash
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 ```
 
 -   Start Project
