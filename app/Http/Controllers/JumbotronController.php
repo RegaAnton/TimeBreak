@@ -25,7 +25,7 @@ class JumbotronController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.jumbotron.create_jumbotron');
     }
 
     /**
@@ -67,7 +67,7 @@ class JumbotronController extends Controller
     public function edit(string $id)
     {
         $data = Jumbotron::findOrFail($id);
-        return view('dashboard.jumbotron.form_jumbotron', compact('data'));
+        return view('dashboard.jumbotron.edit_jumbotron', compact('data'));
     }
 
     /**

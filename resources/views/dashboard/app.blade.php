@@ -80,15 +80,10 @@
             <div class="collapse show" id="sidebar">
                 <div class="sidebar p-3">
                     <h4>Dashboard</h4>
-                    <a href="#"
-                        ><i class="fas fa-home"></i> Dashboard</a
-                    >
-                    <a href="{{ route('index.jumbotron') }}"><i class="fas fa-certificate"></i> Jumbotron </a
-                    >
-                    <a href="#"
-                        ><i class="fas fa-project-diagram"></i> Project</a
-                    >
-                    <a href="#"><i class="fas fa-file-alt"></i> CV</a>
+                    <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                    <a href="{{ route('index.jumbotron') }}"><i class="fas fa-certificate"></i> Jumbotron </a>
+                    <a href="#"><i class="fas fa-project-diagram"></i> Events </a>
+                    <a href="{{ route('index.city') }}"><i class="fas fa-file-alt"></i> Cities </a>
                     <a href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a>
                 </div>
             </div>

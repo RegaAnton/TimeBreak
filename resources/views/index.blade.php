@@ -264,7 +264,7 @@
                 Tentang Kami | Kebijakan Privasi | Kontak Kami | Syarat dan
                 Ketentuan
             </p>
-            <p>Copyright © 2024 - All right reserved by Ayah Amanah</p>
+            <p>Copyright © 2024 - All right reserved by <a href="https://regaag.biz.id/">Rega Anton Giapierro</a></p>
         </footer>
     </body>
 </html>
