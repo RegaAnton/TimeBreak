@@ -83,7 +83,7 @@
                     <a href="#"
                         ><i class="fas fa-home"></i> Dashboard</a
                     >
-                    <a href="{{ route('index.jumbotron') }}" class="active"><i class="fas fa-certificate"></i> Jumbotron </a
+                    <a href="{{ route('index.jumbotron') }}"><i class="fas fa-certificate"></i> Jumbotron </a
                     >
                     <a href="#"
                         ><i class="fas fa-project-diagram"></i> Project</a
@@ -93,30 +93,7 @@
                 </div>
             </div>
             <div class="content flex-grow-1">
-                <h1>JUMBOTRON</h1>
-                <button class="btn btn-add">Add Jumbotron</button>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Images</th>
-                            <th>Opsi</th>
-                        </tr>
-                    </thead>
-                    @foreach ($jumbotron as $item)
-                        <tbody>
-                            <tr>
-                                <td>{{ $item->title }}</td>
-                                <td><a href="{{ $item->image_url }}">View</a></td>
-                                <td>
-                                    <a href="{{ route('jumbotron.edit', $item->id) }}" class="btn btn-warning">
-                                        EDIT
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    @endforeach
-                </table>
+                @yield('content')
             </div>
         </div>
         <script

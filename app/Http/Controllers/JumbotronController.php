@@ -17,7 +17,7 @@ class JumbotronController extends Controller
     public function index()
     {
         $jumbotron = Jumbotron::all();
-        return view('jumbotron.dashboard_jumbotron', compact('jumbotron'));
+        return view('dashboard.jumbotron.dashboard_jumbotron', compact('jumbotron'));
     }
 
     /**
@@ -50,7 +50,7 @@ class JumbotronController extends Controller
 
         $data->save();
 
-        return redirect()->route('index');
+        return redirect()->route('index.jumbotron');
     }
 
     /**
@@ -67,7 +67,7 @@ class JumbotronController extends Controller
     public function edit(string $id)
     {
         $data = Jumbotron::findOrFail($id);
-        return view('jumbotron.form_jumbotron', compact('data'));
+        return view('dashboard.jumbotron.form_jumbotron', compact('data'));
     }
 
     /**
