@@ -83,7 +83,7 @@
                     <a href="#"
                         ><i class="fas fa-home"></i> Dashboard</a
                     >
-                    <a href="#" class="active"><i class="fas fa-certificate"></i> Jumbotron </a
+                    <a href="{{ route('index.jumbotron') }}" class="active"><i class="fas fa-certificate"></i> Jumbotron </a
                     >
                     <a href="#"
                         ><i class="fas fa-project-diagram"></i> Project</a
@@ -109,11 +109,9 @@
                                 <td>{{ $item->title }}</td>
                                 <td><a href="{{ $item->image_url }}">View</a></td>
                                 <td>
-                                    <form action="{{ route('delete.jumbotron', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')                                      
-                                        <button type="submit" class="btn btn-danger">DELETE</button>
-                                    </form>
+                                    <a href="{{ route('jumbotron.edit', $item->id) }}" class="btn btn-warning">
+                                        EDIT
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

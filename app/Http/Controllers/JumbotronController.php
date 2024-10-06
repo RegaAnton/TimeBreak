@@ -17,7 +17,7 @@ class JumbotronController extends Controller
     public function index()
     {
         $jumbotron = Jumbotron::all();
-        return view('dashboard_jumbotron', compact('jumbotron'));
+        return view('jumbotron.dashboard_jumbotron', compact('jumbotron'));
     }
 
     /**
@@ -67,7 +67,7 @@ class JumbotronController extends Controller
     public function edit(string $id)
     {
         $data = Jumbotron::findOrFail($id);
-        return view('form', compact('data'));
+        return view('jumbotron.form_jumbotron', compact('data'));
     }
 
     /**
@@ -98,7 +98,7 @@ class JumbotronController extends Controller
 
         $data->save();
 
-        return redirect()->route('index');
+        return redirect()->route('index.jumbotron');
     }
 
 
@@ -108,17 +108,6 @@ class JumbotronController extends Controller
      */
     public function destroy(string $id)
     {
-        // Mencari Data
-        $findData = Jumbotron::where('id', $id)->firstOrFail();
-
-        // Hapus Image di Lokal
-        if (file_exists(public_path($findData->image_url))) {
-            unlink(public_path($findData->image_url)); // Hapus file gambar lama
-        }
-
-        // Hapus data di database
-        $findData->delete();
-
-        return redirect()->route('index.jumbotron');
+        
     }
 }
