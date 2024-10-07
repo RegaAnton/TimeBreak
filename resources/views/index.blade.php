@@ -111,10 +111,10 @@
             @endforeach
             <div class="overlay"></div>
             <div class="content">
-                <h1>TimeBreak</h1>
+                <h1>Sharing Time with UHA</h1>
                 <div class="social-icons">
-                    <i class="fab fa-instagram"> </i>
-                    <i class="fab fa-tiktok"> </i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-tiktok"></i>
                 </div>
             </div>
         </div>
@@ -227,30 +227,14 @@
         <div class="container">
             <h2 class="section-title">BERDASARKAN WILAYAH</h2>
             <div class="row">
+                @foreach ($cities as $item)
                 <div class="col-md-3">
                     <div class="region-card">
-                        <h5>YOGYAKARTA</h5>
-                        <p>Lihat seluruh event di Yogyakarta</p>
+                        <h5>{{ $item->city_name }}</h5>
+                        <p>Lihat seluruh event di {{ $item->city_name }}</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="region-card">
-                        <h5>SOLO</h5>
-                        <p>Lihat seluruh event di Solo</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="region-card">
-                        <h5>JAKARTA</h5>
-                        <p>Lihat seluruh event di JAKARTA</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="region-card">
-                        <h5>BANDUNG</h5>
-                        <p>Lihat seluruh event di BANDUNG</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="text-center">
                 <button class="btn btn-secondary mt-3">
@@ -264,7 +248,7 @@
                 Tentang Kami | Kebijakan Privasi | Kontak Kami | Syarat dan
                 Ketentuan
             </p>
-            <p>Copyright © 2024 - All right reserved by <a href="https://regaag.biz.id/">Rega Anton Giapierro</a></p>
+            <p>Copyright © 2024 - Create with love by <a href="https://regaag.biz.id/">Rega Anton Giapierro</a></p>
         </footer>
     </body>
 </html>

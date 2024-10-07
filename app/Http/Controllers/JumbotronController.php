@@ -39,8 +39,9 @@ class JumbotronController extends Controller
         ]);
 
         $image = $request->file('image_url');
-        $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+        $imageName = $image->hashName();
         $path = 'images/jumbotron/';
+
         $image->move($path, $imageName);
 
         // Simpan data ke database
@@ -84,11 +85,11 @@ class JumbotronController extends Controller
 
         // Hapus Image di Lokal
         if (file_exists(public_path($data->image_url))) {
-            unlink(public_path($data->image_url)); // Hapus file gambar lama
+            unlink(public_path($data->image_url));
         }
 
         $image = $request->file('image_url');
-        $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+        $imageName = $image->hashName();
         $path = 'images/jumbotron/';
         $image->move($path, $imageName);
 
