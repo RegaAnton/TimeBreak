@@ -2,9 +2,10 @@
 
 @section('content')
     <h1>EDIT EVENT</h1>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('update.event', $event->id) }}" method="POST" enctype="multipart/form-data">
 
     @csrf
+    @method('PUT')
 
         <label for="event_name">Event Name:</label>
         <input type="text" class="form-control" name="event_name" value="{{ $event->event_name }}" required>
