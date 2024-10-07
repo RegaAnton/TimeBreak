@@ -121,55 +121,33 @@
         <div class="container">
             <h2 class="section-title">DAFTAR EVENT</h2>
             <div class="row">
+                @foreach ($events as $item)
                 <div class="col-md-3">
                     <div class="event-card">
                         <img
-                            alt="Event poster for Hilang Untuk Healing in Bandung"
+                            alt="{{ $item->event_name }}"
                             height="400"
-                            src="https://storage.googleapis.com/a1aa/image/nQB3310ZyPbVGFDfuWL1fz5fS99dcYK6jbCUI97XQhP1MdHnA.jpg"
+                            src="{{ $item->image }}"
                             width="300"
                         />
                         <div class="card-body">
                             <button class="btn">More Info</button>
-                            <h5 class="mt-2">HILANG UNTUK HEALING</h5>
+                            <h5 class="mt-2">{{ $item->event_name }}</h5>
                             <p>
                                 WAKTU
                                 <br />
-                                06 OKTOBER 2024
+                                {{ $item->event_date }}
                             </p>
                             <p>
                                 LOKASI
                                 <br />
-                                BANDUNG
+                                {{ $item->location }}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="event-card">
-                        <img
-                            alt="Event poster for Hilang Untuk Healing in Garut"
-                            height="400"
-                            src="https://storage.googleapis.com/a1aa/image/Wp8qesTbHOU3SK4FR32asvaxKJxSzkfrdcnbj6U79h4XmujTA.jpg"
-                            width="300"
-                        />
-                        <div class="card-body">
-                            <button class="btn">More Info</button>
-                            <h5 class="mt-2">HILANG UNTUK HEALING</h5>
-                            <p>
-                                WAKTU
-                                <br />
-                                23 FEBRUARI 2025
-                            </p>
-                            <p>
-                                LOKASI
-                                <br />
-                                GARUT
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
+                @endforeach
+                {{-- <div class="col-md-3">
                     <div class="event-card">
                         <img
                             alt="Event poster for Hilang Untuk Healing in Garut"
@@ -217,6 +195,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="event-card">
+                        <img
+                            alt="Event poster for Hilang Untuk Healing in Garut"
+                            height="400"
+                            src="https://storage.googleapis.com/a1aa/image/Wp8qesTbHOU3SK4FR32asvaxKJxSzkfrdcnbj6U79h4XmujTA.jpg"
+                            width="300"
+                        />
+                        <div class="card-body">
+                            <button class="btn">More Info</button>
+                            <h5 class="mt-2">HILANG UNTUK HEALING</h5>
+                            <p>
+                                WAKTU
+                                <br />
+                                23 FEBRUARI 2025
+                            </p>
+                            <p>
+                                LOKASI
+                                <br />
+                                GARUT
+                            </p>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
             <div class="text-center">
                 <button class="btn btn-secondary mt-3">
