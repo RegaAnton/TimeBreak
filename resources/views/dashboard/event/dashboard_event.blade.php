@@ -17,8 +17,9 @@
             <tr>
                 <td>{{ $item->event_name }}</td>
                 <td>{{ $item->event_date }}</td>
-                <td>{{ $item->event_time }}</td>
+                <td>{{ $item->event_time }}</td>                
                 <td>
+                    <a href="{{ route('edit.event', $item->slug) }}" class="btn btn-warning" > EDIT </a>            
                     <form action="{{ route('destroy.event', $item->slug) }}" method="POST">
                         @csrf
                         @method('DELETE')

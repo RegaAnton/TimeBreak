@@ -12,6 +12,7 @@ Route::GET('/', [IndexController::class, 'index'])->name('index');
 Route::GET('/event', [EventController::class, 'index'])->name('index.event');
 Route::GET('/event/create', [EventController::class, 'create'])->name('create.event');
 Route::POST('/event', [EventController::class, 'store'])->name('post.event');
+Route::GET('/event/{slug}/edit', [EventController::class, 'edit'])->name('edit.event');
 Route::DELETE('/event/{slug}', [EventController::class, 'destroy'])->name('destroy.event');
 
 Route::GET('/jumbotron', [JumbotronController::class, 'index'])->name('index.jumbotron');

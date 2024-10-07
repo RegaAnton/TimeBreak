@@ -87,9 +87,12 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        //
+        $event = Event::with('city')->where('slug', $slug)->firstOrFail();
+        $cities = City::all();
+
+        return view('dashboard.event.edit_event', compact('event', 'cities'));
     }
 
     /**
