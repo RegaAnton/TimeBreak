@@ -8,7 +8,7 @@
 
 <p align="center">Menggunakan Bootstrap 5 sebagai Frontend Dan Laravel 11 sebagai Backend</p>
 
-![App Screenshot](public\images\screenshoot\ss.png)
+![App Screenshot](public/images/screenshoot/ss.png)
 
 ## Introduction 🚀
 
