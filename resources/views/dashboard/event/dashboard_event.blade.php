@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>EVENT</h1>
-    <a href="{{ route('create.event') }}" class="btn btn-success">Add Event</a>
+    <a href="{{ route('create.event') }}" class="btn btn-success my-3">Add Event</a>
     <table class="table table-bordered">
         <thead>
             <tr>

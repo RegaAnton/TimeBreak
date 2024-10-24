@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>JUMBOTRON</h1>
-    <a href="{{ route('create.jumbotron') }}" class="btn btn-success">Add Jumbotron</a>
+    <a href="{{ route('create.jumbotron') }}" class="btn btn-success my-3">Add Jumbotron</a>
     <table class="table table-bordered">
         <thead>
             <tr>
